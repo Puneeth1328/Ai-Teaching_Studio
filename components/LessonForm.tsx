@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { saveLesson } from "@/services/saveLesson";
 
 export default function LessonForm() {
   const [loading, setLoading] = useState(false);
@@ -32,12 +33,9 @@ export default function LessonForm() {
 
     setLoading(true);
 
-    console.log(formData);
+    await saveLesson(formData);
 
-    setTimeout(() => {
-      setLoading(false);
-      alert("Lesson generation coming next!");
-    }, 1500);
+setLoading(false);
   };
 
   return (
