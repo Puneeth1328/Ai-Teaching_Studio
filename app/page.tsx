@@ -1,5 +1,8 @@
 import Navbar from "@/components/Navbar";
 import LessonForm from "@/components/LessonForm";
+import LessonViewer from "@/components/LessonViewer";
+
+import { mockLesson } from "@/lib/mockLesson";
 
 export default function Home() {
   return (
@@ -20,6 +23,8 @@ export default function Home() {
         </div>
 
         <LessonForm />
+
+        <LessonViewer lesson={mockLesson} />
       </section>
     </main>
   );
